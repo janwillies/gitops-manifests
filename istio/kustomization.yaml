@@ -1,0 +1,3 @@
+resources:
+  - github.com/istio/istio//operator/deploy?ref=release-1.5
+  - github.com/janwillies/gitops-manifests//istio-deploy
