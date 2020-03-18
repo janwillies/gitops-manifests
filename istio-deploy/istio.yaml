@@ -1,6 +1,6 @@
 apiVersion: install.istio.io/v1alpha1
 kind: IstioOperator
 metadata:
-  name: application-1
+  name: istio
 spec:
   profile: demo
