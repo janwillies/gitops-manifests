@@ -1,0 +1,7 @@
+apiVersion: aws.crossplane.io/v1alpha3
+kind: Provider
+metadata:
+  name: aws-provider
+spec:
+  region: eu-west-1
+  useServiceAccount: true
