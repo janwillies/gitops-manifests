@@ -3,4 +3,15 @@ kind: IstioOperator
 metadata:
   name: istio-deploy
 spec:
-  profile: demo
+  # profile: demo
+  profile: default
+  components:
+    cni:
+      enabled: true
+  values:
+    cni:
+      excludeNamespaces:
+       - istio-system
+       - kube-system
+       - styra-system
+      logLevel: info

@@ -1,0 +1,78 @@
+---
+apiVersion: workload.crossplane.io/v1alpha1
+kind: KubernetesApplication
+metadata:
+  name: backstage
+  namespace: user
+  labels:
+    app: backstage
+spec:
+  resourceSelector:
+    matchLabels:
+      app: backstage
+  targetSelector:
+    matchLabels:
+      account: user1
+      psp: element
+      # app: backstage
+  resourceTemplates:
+    - metadata:
+        name: backstage-namespace
+        labels:
+          app: backstage
+      spec:
+        template:
+          apiVersion: v1
+          kind: Namespace
+          metadata:
+            name: backstage
+            labels:
+              app: backstage
+              istio-injection: enabled
+    - metadata:
+        name: backstageo-deployment
+        labels:
+          app: backstage
+      spec:
+        template:
+          apiVersion: apps/v1
+          kind: Deployment
+          metadata:
+            namespace: backstage
+            name: backstage
+            labels:
+              app: backstage
+          spec:
+            selector:
+              matchLabels:
+                app: backstage
+            template:
+              metadata:
+                labels:
+                  app: backstage
+              spec:
+                containers:
+                  - name: backstage
+                    image: willies/backstage:latest
+                    ports:
+                      - containerPort: 80
+                        name: http-backstage
+    - metadata:
+        name: backstage-service
+        labels:
+          app: backstage
+      spec:
+        template:
+          apiVersion: v1
+          kind: Service
+          metadata:
+            namespace: backstage
+            name: backstage
+            labels:
+              app: backstage
+          spec:
+            ports:
+              - port: 80
+            selector:
+              app: backstage
+            type: ClusterIP
