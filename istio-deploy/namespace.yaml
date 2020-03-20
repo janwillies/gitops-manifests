@@ -5,8 +5,8 @@ metadata:
   annotations:
     install.operator.istio.io/chart-owner: Base
   labels:
-    install.operator.istio.io/owner-group: install.istio.io	
-    install.operator.istio.io/owner-kind: IstioOperator	
+    install.operator.istio.io/owner-group: install.istio.io
     install.operator.istio.io/owner-name: istio-deploy	
-    istio-injection: disabled	
+    install.operator.istio.io/owner-kind: IstioOperator
+    istio-injection: disabled
     istio-operator-managed: Reconcile
