@@ -1,0 +1,5 @@
+resources:
+  - namespace.yaml
+  - serving-operator.yaml
+
+namespace: serving-operator

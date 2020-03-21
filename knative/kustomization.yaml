@@ -1,0 +1,5 @@
+resources:
+  # - eventing-operator/
+  # - eventing/
+  - serving-operator/
+  - serving/

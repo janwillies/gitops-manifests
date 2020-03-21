@@ -1,0 +1,7 @@
+resources:
+  - deploy.yaml
+
+# namespace: knative-eventing
+
+# commonAnnotations:
+#   argocd.argoproj.io/sync-wave: "5"

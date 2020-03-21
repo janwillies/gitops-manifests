@@ -30,7 +30,7 @@ spec:
               app: backstage
               istio-injection: enabled
     - metadata:
-        name: backstageo-deployment
+        name: backstage-deployment
         labels:
           app: backstage
       spec:
@@ -53,7 +53,7 @@ spec:
               spec:
                 containers:
                   - name: backstage
-                    image: willies/backstage:latest
+                    image: willies/backstage:2020-03-22
                     ports:
                       - containerPort: 80
                         name: http-backstage

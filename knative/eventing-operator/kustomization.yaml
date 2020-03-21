@@ -1,0 +1,5 @@
+resources:
+  - namespace.yaml
+  - eventing-operator.yaml
+
+namespace: eventing-operator
