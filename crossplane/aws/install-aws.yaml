@@ -4,5 +4,6 @@ metadata:
   name: stack-aws
   namespace: crossplane-system
 spec:
-  package: "willies/stack-aws:d8bc51b33fab"
+  # package: "willies/stack-aws:d8bc51b33fab"
+  package: "willies/stack-aws:48c1e0d"
   # package: "crossplane/stack-aws:v0.6.0"
