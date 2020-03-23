@@ -4,5 +4,5 @@ resources:
 
 namespace: istio-system
 
-commonAnnotations:
-  argocd.argoproj.io/sync-wave: "5"
+# commonAnnotations:
+#   argocd.argoproj.io/sync-wave: "5"
